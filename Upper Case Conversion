@@ -1,0 +1,27 @@
+class Solution {
+    public String convert(String s) {
+          String[] words = s.split(" ");
+        StringBuilder result = new StringBuilder();
+
+        for (int i = 0; i < words.length; i++) {
+            String word = words[i];
+
+            if (word.length() > 0) {
+                char ch = word.charAt(0);
+
+                // lowercase na uppercase
+                if (ch >= 'a' && ch <= 'z') {
+                    ch = (char)(ch - 32);
+                }
+
+                result.append(ch);
+                result.append(word.substring(1));
+            }
+
+            if (i < words.length - 1) {
+                result.append(" ");
+            }
+        }
+        return result.toString();
+    }
+}
