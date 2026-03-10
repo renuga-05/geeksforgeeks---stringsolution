@@ -1,0 +1,44 @@
+class Solution {
+    String modify(String s) {
+         // Convert string to character array
+        char[] arr = s.toCharArray();
+        
+        int left = 0;
+        int right = arr.length - 1;
+        
+        // Two pointer approach
+        while (left < right) {
+            
+            // Move left pointer until vowel is found
+            if (!isVowel(arr[left])) {
+                left++;
+            }
+            
+            // Move right pointer until vowel is found
+            else if (!isVowel(arr[right])) {
+                right--;
+            }
+            
+            // If both are vowels, swap
+            else {
+                char temp = arr[left];
+                arr[left] = arr[right];
+                arr[right] = temp;
+                
+                left++;
+                right--;
+            }
+        }
+        
+        // Convert array back to string
+        return new String(arr);
+    }
+    
+    // Function to check vowel
+    boolean isVowel(char ch) {
+        return ch == 'a' || ch == 'e' || ch == 'i' || 
+               ch == 'o' || ch == 'u';
+        
+        
+    }
+}
