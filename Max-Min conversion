@@ -1,0 +1,11 @@
+class Solution {
+    static long performOperation(long N) {
+         String s = String.valueOf(N);
+        
+        long max = Long.parseLong(s.replace('5','6'));
+        long min = Long.parseLong(s.replace('6','5'));
+        
+        return max + min;
+        
+    }
+}
