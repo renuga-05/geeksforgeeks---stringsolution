@@ -1,0 +1,24 @@
+class Solution {
+    static String binaryAdd(int n, String s) {
+        
+         StringBuilder sb = new StringBuilder(s);
+        int i = sb.length() - 1;
+
+        // Traverse from right to left
+        while (i >= 0 && sb.charAt(i) == '1') {
+            sb.setCharAt(i, '0'); // 1 + 1 = 0 (carry)
+            i--;
+        }
+
+        // If we stopped because we found a '0'
+        if (i >= 0) {
+            sb.setCharAt(i, '1'); // 0 + 1 = 1
+        } else {
+            // All bits were '1', add extra '1' at front
+            sb.insert(0, '1');
+        }
+
+        return sb.toString();
+        
+    }
+}
