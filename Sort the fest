@@ -1,0 +1,21 @@
+class Solution {
+    public String is_common(String[] s, String[] t) {
+       HashSet<String> set = new HashSet<>();
+        
+        // Add all items of first menu into set
+        for(String item : s){
+            set.add(item);
+        }
+        
+        // Check if any item of second menu exists in set
+        for(String item : t){
+            if(set.contains(item)){
+                return "CHANGE";
+            }
+        }
+        
+        return "BEHAPPY"; 
+        
+        
+    }
+}
