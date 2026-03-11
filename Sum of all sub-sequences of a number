@@ -1,0 +1,12 @@
+class Solution {
+    int subsequenceSum(String s) {
+        int n = s.length();
+        long digitsum =0;
+        for(int i=0;i<n;i++){
+            digitsum +=(s.charAt(i)-'0');
+        }
+        long power = 1L << (n-1);
+        return (int)(digitsum * power);
+        
+    }
+}
