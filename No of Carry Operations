@@ -1,0 +1,25 @@
+class Solution {
+    static int countCarry(Long A, Long B) {
+        int carry = 0;
+        int carryCount = 0;
+
+        while (A > 0 || B > 0) {
+            long digitA = A % 10;
+            long digitB = B % 10;
+
+            long sum = digitA + digitB + carry;
+
+            if (sum >= 10) {
+                carry = 1;
+                carryCount++;
+            } else {
+                carry = 0;
+            }
+
+            A = A / 10;
+            B = B / 10;
+        }
+
+        return carryCount;
+    }
+};
