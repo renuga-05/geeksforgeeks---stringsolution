@@ -1,0 +1,24 @@
+class Solution {
+    public boolean decode(String S) {
+       String target = "hello";
+        int targetIndex = 0;
+
+        for(int i = 0; i < S.length(); i++) {
+            if(targetIndex < target.length() &&
+               S.charAt(i) == target.charAt(targetIndex)) {
+                targetIndex++;
+
+                if(targetIndex == target.length()) {
+                    return true;   // stop early
+                }
+            }
+        }
+
+        return false;
+            
+        
+        
+        
+        
+    }
+}
