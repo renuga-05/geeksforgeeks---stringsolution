@@ -1,0 +1,22 @@
+class Solution {
+    static boolean checkTogether(String str) {
+        boolean zeroStarted = false;
+        boolean zeroEnded = false;
+
+        for (int i = 0; i < str.length(); i++) {
+            char ch = str.charAt(i);
+
+            if (ch == '0') {
+                if (zeroEnded) {
+                    return false; // 0 found again after ending
+                }
+                zeroStarted = true;
+            } else { // ch == '1'
+                if (zeroStarted) {
+                    zeroEnded = true;
+                }
+            }
+        }
+        return zeroStarted;
+    }
+}
