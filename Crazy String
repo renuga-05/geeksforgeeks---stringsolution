@@ -1,0 +1,28 @@
+class Solution {
+    static String getCrazy(String s) {
+         StringBuilder result = new StringBuilder();
+
+        // Step 1: keep first character unchanged
+        result.append(s.charAt(0));
+
+        // Step 2: decide next case based on first character
+        boolean makeUpper = Character.isLowerCase(s.charAt(0));
+
+        // Step 3: start from second character
+        for (int i = 1; i < s.length(); i++) {
+            char ch = s.charAt(i);
+
+            if (makeUpper) {
+                result.append(Character.toUpperCase(ch));
+            } else {
+                result.append(Character.toLowerCase(ch));
+            }
+
+            // flip case
+            makeUpper = !makeUpper;
+        }
+
+        return result.toString();
+
+    }
+}
