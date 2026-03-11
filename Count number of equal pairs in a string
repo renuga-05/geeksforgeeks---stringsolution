@@ -1,0 +1,19 @@
+class Sol {
+    long equalPairs(String s) {
+        int[] freq = new int[26];   // to store frequency of characters
+        long result = 0;
+
+        // Step 1: count frequency of each character
+        for (int i = 0; i < s.length(); i++) {
+            freq[s.charAt(i) - 'a']++;
+        }
+
+        // Step 2: calculate pairs
+        for (int i = 0; i < 26; i++) {
+            result += (long) freq[i] * freq[i];
+        }
+
+        return result;
+            
+    }
+}
