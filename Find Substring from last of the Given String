@@ -1,0 +1,13 @@
+
+class Solution {
+    int search(String X, String Y) {
+      int index = X.lastIndexOf(Y);
+        
+        if (index == -1) {
+            return -1;
+        }
+        
+        return index + 1;  
+    
+    }
+}
