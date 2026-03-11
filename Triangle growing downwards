@@ -1,0 +1,23 @@
+class Solution {
+    static void printTriangleDownwards(String str) {
+           // Input string
+        int n = str.length();
+        
+        for (int i = 1; i <= n; i++) {
+            
+            // Print dots
+            for (int j = 1; j <= n - i; j++) {
+                  System.out.print(".");
+                
+            }
+            
+            // Print characters from string
+            for (int k = 0; k < i; k++) {
+                System.out.print(str.charAt(k));
+            }
+            
+            // Move to next line
+            System.out.println();
+        }
+    }
+}
